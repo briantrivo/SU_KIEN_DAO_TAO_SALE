@@ -1187,25 +1187,26 @@
     /* Banking Payment Info Box */
     .bank-box {
       margin-top: 24px;
-      padding: 20px;
-      border-radius: 14px;
+      padding: 22px;
+      border-radius: 16px;
       background: linear-gradient(135deg, rgba(124, 58, 237, .06), rgba(245, 158, 11, .06));
       border: 1px solid rgba(124, 58, 237, .2);
       display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 20px;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
       align-items: center;
     }
     .bank-qr {
-      width: 130px;
-      height: 130px;
-      border-radius: 10px;
+      width: 150px;
+      height: auto;
+      border-radius: 12px;
       background: #fff;
-      padding: 6px;
+      padding: 8px;
       border: 1px solid var(--line);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+      text-align: center;
     }
-    .bank-qr img { width: 100%; height: 100%; object-fit: contain; }
+    .bank-qr img { width: 100%; height: auto; display: block; border-radius: 8px; }
     .bank-details h4 {
       font-family: "Be Vietnam Pro", sans-serif;
       font-size: 15px;
@@ -1953,15 +1954,17 @@
           <!-- Banking Box -->
           <div class="bank-box">
             <div class="bank-qr">
-              <img src="https://api.vietqr.io/image/970422-0931332671-compact2.png?amount=500000&addInfo=OHANA%20AFFILIATE&accountName=VO%20QUOC%20TRI" alt="Mã QR Chuyển Khoản VietQR" loading="lazy">
+              <img src="images/acb-qr.png" alt="Mã QR Chuyển Khoản ACB - VO QUOC TRI" loading="lazy">
             </div>
             <div class="bank-details">
-              <h4>THÔNG TIN CHUYỂN KHOẢN GIỮ CHỖ</h4>
-              <p>• Ngân hàng: <b>MB Bank (Ngân hàng Quân Đội)</b></p>
-              <p>• Số tài khoản: <b style="font-size: 16px; color: var(--amber);">0931332671</b></p>
+              <h4>THÔNG TIN CHUYỂN KHOẢN THANH TOÁN VÉ VIP</h4>
+              <p>• Ngân hàng: <b>ACB (Ngân hàng TMCP Á Châu)</b></p>
+              <p>• Chi nhánh: <b>ACB - CN DONG SAI GON</b></p>
+              <p>• Số tài khoản: <b style="font-size: 18px; color: var(--amber); letter-spacing: .04em;">49682677</b></p>
               <p>• Chủ tài khoản: <b>VO QUOC TRI</b></p>
+              <p>• Số tiền: <b>500.000đ</b> / Thư mời VIP</p>
               <p>• Nội dung: <b>[Họ tên] [Số điện thoại] OHANA</b></p>
-              <p style="font-size: 12.5px; color: var(--w60); margin-top: 4px;"><i>(Quý khách có thể chuyển khoản giữ chỗ trước hoặc chờ Ban tổ chức liên hệ hướng dẫn)</i></p>
+              <p style="font-size: 12.5px; color: var(--w60); margin-top: 6px;"><i>(Quý khách có thể quét mã QR chuyển khoản trước hoặc chờ Ban tổ chức liên hệ hướng dẫn)</i></p>
             </div>
           </div>
 
