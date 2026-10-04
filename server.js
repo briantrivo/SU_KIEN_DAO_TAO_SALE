@@ -7,7 +7,10 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'astronixa2026';
-const DATA_FILE = path.join(__dirname, 'data', 'leads.json');
+const DATA_FILE = process.env.VERCEL
+  ? path.join('/tmp', 'leads.json')
+  : path.join(__dirname, 'data', 'leads.json');
+const INITIAL_DATA_FILE = path.join(__dirname, 'data', 'leads.json');
 const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || '';
 
 // Helper: Forward lead data to Google Sheet Webhook
@@ -52,6 +55,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 function getLeads() {
   try {
     if (!fs.existsSync(DATA_FILE)) {
+      if (fs.existsSync(INITIAL_DATA_FILE)) {
+        try {
+          const initData = fs.readFileSync(INITIAL_DATA_FILE, 'utf8');
+          fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
+          fs.writeFileSync(DATA_FILE, initData, 'utf8');
+          return JSON.parse(initData || '[]');
+        } catch (_) {}
+      }
       fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
       fs.writeFileSync(DATA_FILE, '[]', 'utf8');
       return [];
