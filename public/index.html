@@ -736,7 +736,7 @@
     }
     .venue-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1.2fr;
+      grid-template-columns: 1fr 1fr;
       gap: 20px;
     }
     .vframe {
@@ -764,6 +764,8 @@
     }
     .kb-a img { animation: kbA 16s ease-in-out infinite alternate; }
     .kb-b img { animation: kbB 16s ease-in-out infinite alternate; animation-delay: -4s; }
+    .kb-c img { animation: kbA 18s ease-in-out infinite alternate; animation-delay: -8s; }
+    .kb-d img { animation: kbB 18s ease-in-out infinite alternate; animation-delay: -12s; }
     .kb::after {
       content: "";
       position: absolute;
@@ -772,6 +774,8 @@
       animation: shine 9s ease-in-out infinite;
     }
     .kb-b::after { animation-delay: 4.5s; }
+    .kb-c::after { animation-delay: 3s; }
+    .kb-d::after { animation-delay: 6.5s; }
 
     @keyframes kbA { 0% { transform: scale(1.04) translate(0, 0); } 100% { transform: scale(1.14) translate(-2%, -1.5%); } }
     @keyframes kbB { 0% { transform: scale(1.14) translate(2%, 1%); } 100% { transform: scale(1.04) translate(0, 0); } }
@@ -1354,8 +1358,8 @@
           <svg class="ic" style="stroke:var(--gold-2)" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <div>
             <div class="k">Địa điểm tổ chức</div>
-            <div class="v">Siha - The Happy Place</div>
-            <div class="s">Tầng M, Home Hotel, 158 Nguyễn Đình Chính, P.8, Q. Phú Nhuận, TP.HCM</div>
+            <div class="v">Siha - Cafe, Bar &amp; Eatery</div>
+            <div class="s">158 Nguyễn Đình Chính, Phường 8, Quận Phú Nhuận, TP. Hồ Chí Minh</div>
           </div>
         </div>
       </div>
@@ -1573,31 +1577,55 @@
     <!-- Section: Venue Showcase -->
     <div class="venue">
       <div class="venue-head">
-        <div class="venue-eyebrow">KHÔNG GIAN ĐẲNG CẤP &amp; SANG TRỌNG</div>
-        <h2 class="venue-title">SIHA - THE HAPPY PLACE · PHÚ NHUẬN</h2>
-        <p style="color: var(--w80); max-width: 720px; margin: 8px auto 0; font-size: 15px;">
-          Tọa lạc tại Tầng M - Home Hotel, không gian được thiết kế theo phong cách hiện đại nhiệt đới sang trọng, mang lại trải nghiệm ấm cúng, thư giãn và truyền cảm hứng.
+        <div class="venue-eyebrow">KHÔNG GIAN ĐẲNG CẤP &amp; HIỆN ĐẠI</div>
+        <h2 class="venue-title">SIHA - CAFE, BAR &amp; EATERY · PHÚ NHUẬN</h2>
+        <p style="color: var(--w80); max-width: 780px; margin: 8px auto 0; font-size: 15px; line-height: 1.6;">
+          Tọa lạc tại <b>158 Nguyễn Đình Chính, Phú Nhuận, Hồ Chí Minh</b> – Siha sở hữu không gian phong cách nhiệt đới hiện đại với sân khấu LED OHANA-C hoành tráng, khu bàn tiệc sang trọng và quầy bar lounge ấm cúng lý tưởng cho sự kiện kết nối đỉnh cao.
         </p>
       </div>
 
       <div class="venue-grid">
+        <!-- Photo 1: Workshop Hall with Stage -->
         <figure class="vframe">
           <div class="kb kb-a">
-            <img src="images/siha-hoi-truong.jpg" alt="Hội trường sự kiện Siha The Happy Place - M Floor Home Hotel" loading="lazy">
+            <img src="images/siha-workshop-hall.jpg" alt="Hội trường Workshop & Sân khấu LED OHANA-C - Siha Cafe, Bar & Eatery" loading="lazy">
           </div>
           <figcaption>
-            <b>Hội Trường &amp; Workshop Lounge Sang Trọng</b>
-            <span>Không gian đào tạo hiện đại với màn hình LED sắc nét, ghế bọc nhung và cây xanh thoáng đãng.</span>
+            <b>Hội Trường Workshop &amp; Sân Khấu LED OHANA-C</b>
+            <span>Không gian đào tạo chuyên nghiệp với ghế nệm cao cấp, màn hình LED sắc nét và hệ thống âm thanh hiện đại.</span>
           </figcaption>
         </figure>
 
+        <!-- Photo 2: Banquet Dining Setup -->
         <figure class="vframe">
           <div class="kb kb-b">
-            <img src="images/siha-tiec-toi.jpg" alt="Tiệc tối Networking Siha The Happy Place" loading="lazy">
+            <img src="images/siha-banquet.jpg" alt="Không gian Tiệc tối VIP & Bàn tiệc sang trọng - Siha Cafe, Bar & Eatery" loading="lazy">
           </div>
           <figcaption>
-            <b>Khu Vực Tiệc Tối VIP Networking Thân Mật</b>
-            <span>Thưởng thức ẩm thực cao cấp, ánh nến ấm áp và kết nối đối tác tại tầng M Home Hotel.</span>
+            <b>Không Gian Bàn Tiệc &amp; Hội Trường Sự Kiện</b>
+            <span>Bàn tiệc trang trọng chuẩn bị sẵn sàng chào đón quý đối tác và thành viên tham dự tiệc tối VIP.</span>
+          </figcaption>
+        </figure>
+
+        <!-- Photo 3: Bar & Eatery Counter -->
+        <figure class="vframe">
+          <div class="kb kb-c">
+            <img src="images/siha-bar-counter.jpg" alt="Khu vực Siha Cafe, Bar & Eatery pha chế đồ uống & cocktail cao cấp" loading="lazy">
+          </div>
+          <figcaption>
+            <b>Quầy Bar &amp; Eatery Đẳng Cấp</b>
+            <span>Thiết kế kiến trúc vòm độc đáo, không gian ấm cúng phục vụ cocktail, đồ uống và teabreak cao cấp.</span>
+          </figcaption>
+        </figure>
+
+        <!-- Photo 4: Networking Lounge -->
+        <figure class="vframe">
+          <div class="kb kb-d">
+            <img src="images/siha-lounge.jpg" alt="Khu vực Lounge giao lưu & Networking thư giãn - Siha" loading="lazy">
+          </div>
+          <figcaption>
+            <b>Khu Vực Lounge Giao Lưu &amp; Thư Giãn</b>
+            <span>Góc kết nối mở thân mật với cây xanh và ánh sáng nghệ thuật, lý tưởng để đàm đạo và chia sẻ cơ hội hợp tác.</span>
           </figcaption>
         </figure>
       </div>
@@ -1609,7 +1637,7 @@
             <iframe 
               src="https://maps.google.com/maps?q=158%20Nguy%E1%BB%85n%20%C4%90%C3%ACnh%20Ch%C3%ADnh,%20Ph%C6%B0%E1%BB%9Dng%208,%20Ph%C3%BA%20Nhu%E1%BA%ADn,%20H%E1%BB%93%20Ch%C3%AD%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed" 
               loading="lazy" 
-              title="Vị trí Siha The Happy Place - Home Hotel 158 Nguyễn Đình Chính"
+              title="Vị trí Siha - Cafe, Bar & Eatery - 158 Nguyễn Đình Chính, Phú Nhuận"
               allowfullscreen>
             </iframe>
           </div>
@@ -1617,25 +1645,25 @@
 
         <div class="map-card glass">
           <span class="lbl" style="color: var(--gold-2); font-weight: 800; font-size: 11.5px; text-transform: uppercase; letter-spacing: .12em;">VỊ TRÍ ĐẮC ĐỊA</span>
-          <h3>Siha - The Happy Place</h3>
+          <h3>Siha - Cafe, Bar &amp; Eatery</h3>
           <ul class="map-info">
             <li>
               <svg class="ic" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span><b>Địa chỉ:</b> Tầng M, Home Hotel – 158 Nguyễn Đình Chính, Phường 8, Quận Phú Nhuận, TP. Hồ Chí Minh.</span>
+              <span><b>Địa chỉ:</b> 158 Nguyễn Đình Chính, Phường 8, Quận Phú Nhuận, TP. Hồ Chí Minh.</span>
             </li>
             <li>
               <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <span><b>Giao thông:</b> Cách Sân bay Quốc tế Tân Sơn Nhất chỉ 5–10 phút di chuyển, thuận tiện cho quý khách mọi miền.</span>
+              <span><b>Giao thông:</b> Vị trí trung tâm Phú Nhuận, cách Sân bay Tân Sơn Nhất chỉ 5–10 phút di chuyển.</span>
             </li>
             <li>
               <svg class="ic" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-              <span><b>Bãi đỗ xe:</b> Có bãi đỗ xe ô tô và xe máy rộng rãi, an ninh và hỗ trợ tận tình.</span>
+              <span><b>Bãi đỗ xe:</b> Có bãi đỗ xe ô tô và xe máy an toàn, thuận tiện.</span>
             </li>
           </ul>
           <div class="map-btns">
-            <a class="map-btn" href="https://maps.google.com/?q=158+Nguyễn+Đình+Chính+Phú+Nhuận" target="_blank" rel="noopener">
+            <a class="map-btn" href="https://maps.app.goo.gl/b5eNPSRiXaansPj3A" target="_blank" rel="noopener">
               <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-              Chỉ đường Google Maps
+              Mở Google Maps (Chỉ Đường)
             </a>
             <a class="map-btn ghost" href="tel:0931332671">
               <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
@@ -1889,7 +1917,7 @@
     <footer class="footer">
       <div class="footer-brand">OHANA AFFILIATE · SALE &amp; NETWORK 2026</div>
       <p>© 2026 Bản quyền thuộc về ASTRONIXA &amp; OHANA SUPER APP. Đồng hành cùng phát triển thị trường công nghệ số.</p>
-      <p style="margin-top: 6px;">Hotline hỗ trợ 24/7: <b style="color: var(--amber);">0931 332 671</b> · Địa điểm: Siha - The Happy Place, Tầng M Home Hotel, 158 Nguyễn Đình Chính, Phú Nhuận, TP.HCM</p>
+      <p style="margin-top: 6px;">Hotline hỗ trợ 24/7: <b style="color: var(--amber);">0931 332 671</b> · Địa điểm: <b>Siha - Cafe, Bar &amp; Eatery</b>, 158 Nguyễn Đình Chính, Phú Nhuận, Hồ Chí Minh</p>
     </footer>
   </div>
 </main>
@@ -1968,7 +1996,7 @@
       ticket,
       attendees,
       note,
-      event: "Ohana Affiliate Đào Tạo Sale & Network - 11/10/2026 - Siha The Happy Place",
+      event: "Ohana Affiliate Đào Tạo Sale & Network - 11/10/2026 - Siha Cafe, Bar & Eatery",
       source: "landing-page",
       website: form.website.value,
       utm_source: params.get("utm_source") || "",

@@ -13,7 +13,8 @@ Chào bạn, website **Ohana Affiliate Đào Tạo Sale & Network 2026** đã đ
 - **Tên sự kiện:** Ohana Affiliate Đào Tạo Sale & Network
 - **Chủ đề chính:** Đột phá hiệu suất – Làm chủ kỷ nguyên Affiliate Ohana Super App
 - **Thời gian:** 13h30 – 21h00, Chủ Nhật ngày 11/10/2026
-- **Địa điểm:** Siha - The Happy Place – Tầng M, Home Hotel, 158 Nguyễn Đình Chính, Phường 8, Quận Phú Nhuận, TP. Hồ Chí Minh
+- **Địa điểm:** Siha - Cafe, Bar & Eatery – 158 Nguyễn Đình Chính, Phú Nhuận, Hồ Chí Minh
+- **Google Maps:** [https://maps.app.goo.gl/b5eNPSRiXaansPj3A](https://maps.app.goo.gl/b5eNPSRiXaansPj3A)
 - **Diễn giả:**
   - **Võ Quốc Trí:** Giám Đốc Phát Triển Thị Trường Astronixa Việt Nam (Phụ trách: Chương trình Affiliate Ohana Career 14h30 - 15h30)
   - **Nguyễn Thanh Sơn:** Co-Founder & COO Astronixa Châu Á Thái Bình Dương (Phụ trách: Con Đường Sự Nghiệp 15h30 - 16h30)
@@ -32,8 +33,8 @@ node server.js
 ```
 
 Sau đó mở trình duyệt truy cập:
-- **Trang chủ:** [http://localhost:3000](http://localhost:3000)
-- **Trang CRM Quản Trị:** [http://localhost:3000/admin](http://localhost:3000/admin) *(Mật khẩu mặc định: `astronixa2026`)*
+- **Trang chủ:** [http://localhost:3001](http://localhost:3001)
+- **Trang CRM Quản Trị:** [http://localhost:3001/admin](http://localhost:3001/admin) *(Mật khẩu mặc định: `astronixa2026`)*
 
 ---
 

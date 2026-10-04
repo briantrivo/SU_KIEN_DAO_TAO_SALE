@@ -91,7 +91,7 @@ app.get('/api/config', (req, res) => {
     eventName: process.env.EVENT_NAME || 'Ohana Affiliate Đào Tạo Sale & Network',
     eventDate: process.env.EVENT_DATE || '2026-10-11',
     eventTime: process.env.EVENT_TIME || '13:30 - 21:00',
-    eventLocation: process.env.EVENT_LOCATION || 'Siha - The Happy Place - M Floor, Home Hotel, 158 Nguyễn Đình Chính, P.8, Q. Phú Nhuận, TP.HCM',
+    eventLocation: process.env.EVENT_LOCATION || 'Siha - Cafe, Bar & Eatery - 158 Nguyễn Đình Chính, Phú Nhuận, Hồ Chí Minh',
     hotline: process.env.HOTLINE || '0931332671',
     hotlineDisplay: process.env.HOTLINE_DISPLAY || '0931 332 671',
     repName: process.env.REPRESENTATIVE_NAME || 'Võ Quốc Trí',
