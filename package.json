@@ -1,0 +1,25 @@
+{
+  "name": "ohana-affiliate-training-2026",
+  "version": "1.0.0",
+  "description": "Website Sự Kiện Ohana Affiliate Đào Tạo Sale & Network 2026",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "ohana",
+    "affiliate",
+    "sale",
+    "network",
+    "astronixa",
+    "training"
+  ],
+  "author": "Astronixa & Ohana",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

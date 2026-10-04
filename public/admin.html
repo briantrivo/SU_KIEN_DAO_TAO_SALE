@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>CRM Quản Lý Đăng Ký · Ohana Affiliate 2026</title>
+  <link rel="icon" type="image/png" href="images/astronixa-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800;900&family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0d061c;
+      --card: rgba(255, 255, 255, .05);
+      --card-hover: rgba(255, 255, 255, .08);
+      --line: rgba(124, 58, 237, .25);
+      --primary: #7c3aed;
+      --primary-light: #a78bfa;
+      --amber: #f59e0b;
+      --gold: #fbbf24;
+      --cyan: #06b6d4;
+      --white: #ffffff;
+      --muted: rgba(255, 255, 255, .65);
+      --ok: #10b981;
+      --err: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Arimo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 58, 237, .25), transparent 70%),
+                  radial-gradient(1000px 600px at 20% 40%, rgba(6, 182, 212, .15), transparent 60%),
+                  linear-gradient(160deg, #1e0d38 0%, #120726 45%, #0d061c 100%);
+      color: var(--white);
+      min-height: 100vh;
+      padding: 24px 16px 60px;
+    }
+
+    .wrap { max-width: 1280px; margin: 0 auto; }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { height: 38px; width: auto; }
+    .brand h1 { font-family: "Be Vietnam Pro"; font-weight: 800; font-size: 20px; color: var(--gold); }
+    .brand p { font-size: 13px; color: var(--muted); }
+
+    /* Login Card */
+    .login-box {
+      max-width: 400px;
+      margin: 15vh auto;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+    .login-box h2 { font-family: "Be Vietnam Pro"; font-size: 22px; color: var(--white); margin-bottom: 8px; }
+    .login-box p { font-size: 13.5px; color: var(--muted); margin-bottom: 24px; }
+    .login-box input {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, .3);
+      border: 1px solid var(--line);
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .login-box input:focus { border-color: var(--primary-light); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 46px;
+      padding: 0 20px;
+      border-radius: 10px;
+      font-family: "Be Vietnam Pro";
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary), #9333ea);
+      color: #fff;
+      transition: all .2s;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, .3);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124, 58, 237, .5); }
+    .btn-secondary {
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, .15); }
+    .btn-success { background: linear-gradient(135deg, #059669, #10b981); }
+
+    /* Dashboard Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      backdrop-filter: blur(8px);
+    }
+    .stat-card span { font-size: 12.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); font-weight: 700; }
+    .stat-card b { display: block; font-family: "Be Vietnam Pro"; font-size: 28px; font-weight: 900; margin-top: 6px; color: var(--gold); }
+
+    /* Toolbar & Search */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      max-width: 420px;
+    }
+    .search-input {
+      width: 100%;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, .35);
+      border: 1px solid var(--line);
+      color: #fff;
+      padding: 0 14px;
+      font-size: 14px;
+      outline: none;
+    }
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: "Be Vietnam Pro";
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* Table */
+    .table-wrap {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow-x: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+    th {
+      font-family: "Be Vietnam Pro";
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--primary-light);
+      padding: 16px 14px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(0, 0, 0, .25);
+      white-space: nowrap;
+    }
+    td {
+      padding: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      vertical-align: middle;
+    }
+    tr:hover td { background: var(--card-hover); }
+
+    .badge-ticket {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      background: rgba(245, 158, 11, .15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, .3);
+    }
+
+    .crm-sel {
+      background: rgba(0, 0, 0, .4);
+      border: 1px solid var(--line);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      outline: none;
+      cursor: pointer;
+    }
+    .crm-note {
+      background: rgba(0, 0, 0, .3);
+      border: 1px solid transparent;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      width: 100%;
+      min-width: 160px;
+      font-size: 13px;
+      outline: none;
+    }
+    .crm-note:focus {
+      background: rgba(0, 0, 0, .6);
+      border-color: var(--primary-light);
+    }
+
+    .quick-actions { display: flex; gap: 6px; align-items: center; }
+    .action-icon {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .action-icon:hover { background: var(--primary); transform: scale(1.08); }
+    .action-icon.zalo { background: rgba(0, 104, 255, .2); color: #38bdf8; }
+    .action-icon.zalo:hover { background: #0068ff; color: #fff; }
+
+    .hidden { display: none !important; }
+    .live-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      margin-right: 6px;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- Login Container -->
+  <div id="loginBox" class="login-box">
+    <div style="font-size: 36px; margin-bottom: 12px;">🔐</div>
+    <h2>Đăng Nhập Quản Trị</h2>
+    <p>Hệ thống quản lý đăng ký Ohana Affiliate 2026</p>
+    <form id="loginForm">
+      <input type="password" id="pw" placeholder="Nhập mật khẩu quản trị..." required autofocus>
+      <button type="submit" class="btn" style="width: 100%;">Truy Cập Dashboard</button>
+    </form>
+    <div id="loginMsg" style="color: var(--err); margin-top: 12px; font-size: 13px;"></div>
+  </div>
+
+  <!-- Main CRM Application -->
+  <div id="app" class="hidden">
+    <!-- Header -->
+    <div class="header">
+      <div class="brand">
+        <img src="images/astronixa-icon.png" alt="Astronixa">
+        <div>
+          <h1>OHANA AFFILIATE 2026 · CRM QUẢN LÝ</h1>
+          <p><span class="live-dot"></span>Hệ thống đồng bộ trực tiếp · Địa điểm: Siha The Happy Place</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button id="btnExport" class="btn btn-success">
+          <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Xuất File Excel
+        </button>
+        <button id="btnReload" class="btn btn-secondary">
+          <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+          Làm mới
+        </button>
+        <button id="btnLogout" class="btn btn-secondary" style="color: #ff9999;">Đăng xuất</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span>Tổng Lượng Đăng Ký</span>
+        <b id="statTotal">0</b>
+      </div>
+      <div class="stat-card">
+        <span>Thư Mời VIP</span>
+        <b id="statVip">0</b>
+      </div>
+      <div class="stat-card">
+        <span>Chưa Liên Hệ (Mới)</span>
+        <b id="statNew" style="color: #f87171;">0</b>
+      </div>
+      <div class="stat-card">
+        <span>Đã Xác Nhận & Thanh Toán</span>
+        <b id="statConfirmed" style="color: #34d399;">0</b>
+      </div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Tìm theo Tên, Số điện thoại, Email...">
+      </div>
+      <div class="filters" id="statusFilters">
+        <button class="filter-btn active" data-filter="all">Tất cả (<span id="cntAll">0</span>)</button>
+        <button class="filter-btn" data-filter="new">Mới (<span id="cntNew">0</span>)</button>
+        <button class="filter-btn" data-filter="contacted">Đã liên hệ (<span id="cntContacted">0</span>)</button>
+        <button class="filter-btn" data-filter="paid">Đã thanh toán (<span id="cntPaid">0</span>)</button>
+        <button class="filter-btn" data-filter="confirmed">Đã chốt vé (<span id="cntConfirmed">0</span>)</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Thời gian</th>
+            <th>Họ & Tên</th>
+            <th>Số Điện Thoại</th>
+            <th>Email & Nghề nghiệp</th>
+            <th>Hạng Vé</th>
+            <th>Trạng thái</th>
+            <th>Ghi chú CRM</th>
+            <th>Thao tác</th>
+          </tr>
+        </thead>
+        <tbody id="leadsBody">
+          <tr><td colspan="8" style="text-align:center; padding: 30px;">Đang tải dữ liệu...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  let pw = sessionStorage.getItem("oa_admin_pw") || "";
+  let leads = [];
+  let currentFilter = "all";
+  let refreshTimer = null;
+
+  const $ = (id) => document.getElementById(id);
+
+  async function loadData(silent = false) {
+    if (!pw) return;
+    try {
+      const res = await fetch("/api/leads", {
+        headers: { "x-admin-password": pw }
+      });
+      if (res.status === 401) {
+        sessionStorage.removeItem("oa_admin_pw");
+        pw = "";
+        $("app").classList.add("hidden");
+        $("loginBox").classList.remove("hidden");
+        $("loginMsg").textContent = "Mật khẩu không đúng hoặc phiên đăng nhập hết hạn.";
+        return;
+      }
+      const data = await res.json();
+      if (data.ok) {
+        leads = data.leads || [];
+        render();
+        $("loginBox").classList.add("hidden");
+        $("app").classList.remove("hidden");
+        if (!refreshTimer) {
+          refreshTimer = setInterval(() => loadData(true), 12000);
+        }
+      }
+    } catch (err) {
+      if (!silent) console.error("Load leads error:", err);
+    }
+  }
+
+  function render() {
+    const q = ($("searchInput").value || "").toLowerCase().trim();
+    let filtered = leads.filter(l => {
+      if (currentFilter !== "all" && (l.status || "new") !== currentFilter) return false;
+      if (!q) return true;
+      return (l.full_name && l.full_name.toLowerCase().includes(q)) ||
+             (l.phone && l.phone.includes(q)) ||
+             (l.email && l.email.toLowerCase().includes(q)) ||
+             (l.company && l.company.toLowerCase().includes(q));
+    });
+
+    // Update Counts
+    const total = leads.length;
+    const vipCount = leads.filter(l => (l.ticket || "").toUpperCase().includes("VIP")).length;
+    const newCount = leads.filter(l => (l.status || "new") === "new").length;
+    const paidCount = leads.filter(l => l.status === "paid").length;
+    const confirmedCount = leads.filter(l => l.status === "confirmed").length;
+    const contactedCount = leads.filter(l => l.status === "contacted").length;
+
+    $("statTotal").textContent = total;
+    $("statVip").textContent = vipCount;
+    $("statNew").textContent = newCount;
+    $("statConfirmed").textContent = confirmedCount + paidCount;
+
+    $("cntAll").textContent = total;
+    $("cntNew").textContent = newCount;
+    $("cntContacted").textContent = contactedCount;
+    $("cntPaid").textContent = paidCount;
+    $("cntConfirmed").textContent = confirmedCount;
+
+    const tbody = $("leadsBody");
+    if (filtered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding: 40px; color: var(--muted);">Không có dữ liệu đăng ký phù hợp.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(l => {
+      const timeStr = new Date(l.received_at || l.submitted_at || Date.now()).toLocaleString("vi-VN", {
+        day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"
+      });
+      const st = l.status || "new";
+
+      return `
+        <tr>
+          <td style="color: var(--muted); font-size: 13px; white-space: nowrap;">${timeStr}</td>
+          <td>
+            <b style="color: #fff; font-size: 15px;">${escapeHtml(l.full_name)}</b>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 2px;">SL: <b>${l.attendees || 1}</b> người</div>
+          </td>
+          <td>
+            <a href="tel:${l.phone}" style="color: var(--cyan); font-weight: 700; text-decoration: none;">${l.phone}</a>
+          </td>
+          <td>
+            <div style="color: #ddd;">${escapeHtml(l.email || '—')}</div>
+            <div style="font-size: 12px; color: var(--muted);">${escapeHtml(l.company || 'Cá nhân')}</div>
+          </td>
+          <td>
+            <span class="badge-ticket">${escapeHtml(l.ticket || 'VIP')}</span>
+          </td>
+          <td>
+            <select class="crm-sel" data-id="${l.id}">
+              <option value="new" ${st === 'new' ? 'selected' : ''}>🔴 Mới đăng ký</option>
+              <option value="contacted" ${st === 'contacted' ? 'selected' : ''}>🟡 Đã liên hệ</option>
+              <option value="paid" ${st === 'paid' ? 'selected' : ''}>🟣 Đã thanh toán</option>
+              <option value="confirmed" ${st === 'confirmed' ? 'selected' : ''}>🟢 Đã chốt vé</option>
+              <option value="cancelled" ${st === 'cancelled' ? 'selected' : ''}>⚪ Đã hủy</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="crm-note" data-id="${l.id}" value="${escapeHtml(l.note || '')}" placeholder="Nhập ghi chú nhanh...">
+          </td>
+          <td>
+            <div class="quick-actions">
+              <a class="action-icon" href="tel:${l.phone}" title="Gọi điện">
+                <svg style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg>
+              </a>
+              <a class="action-icon zalo" href="https://zalo.me/${l.phone}" target="_blank" rel="noopener" title="Mở Zalo">
+                <span style="font-size: 11px; font-weight: 900;">Z</span>
+              </a>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  function escapeHtml(str) {
+    if (!str) return "";
+    return String(str).replace(/[&<>"']/g, m => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[m]);
+  }
+
+  async function updateLead(id, updates) {
+    try {
+      await fetch(`/api/leads/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": pw
+        },
+        body: JSON.stringify(updates)
+      });
+      const index = leads.findIndex(l => l.id === id);
+      if (index !== -1) {
+        Object.assign(leads[index], updates);
+      }
+    } catch (err) {
+      console.error("Update lead failed:", err);
+    }
+  }
+
+  // Events
+  $("loginForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    pw = $("pw").value.trim();
+    sessionStorage.setItem("oa_admin_pw", pw);
+    loadData();
+  });
+
+  $("searchInput").addEventListener("input", render);
+
+  $("statusFilters").addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+
+  $("leadsBody").addEventListener("change", (e) => {
+    const sel = e.target.closest(".crm-sel");
+    if (sel) {
+      updateLead(sel.dataset.id, { status: sel.value });
+      return;
+    }
+  });
+
+  $("leadsBody").addEventListener("blur", (e) => {
+    const note = e.target.closest(".crm-note");
+    if (note) {
+      updateLead(note.dataset.id, { note: note.value.trim() });
+    }
+  }, true);
+
+  $("leadsBody").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && e.target.classList.contains("crm-note")) {
+      e.target.blur();
+    }
+  });
+
+  $("btnExport").addEventListener("click", () => {
+    window.open(`/api/export/csv?pw=${encodeURIComponent(pw)}`, "_blank");
+  });
+
+  $("btnReload").addEventListener("click", () => loadData());
+
+  $("btnLogout").addEventListener("click", () => {
+    sessionStorage.removeItem("oa_admin_pw");
+    pw = "";
+    leads = [];
+    clearInterval(refreshTimer);
+    refreshTimer = null;
+    $("app").classList.add("hidden");
+    $("loginBox").classList.remove("hidden");
+    $("pw").value = "";
+  });
+
+  if (pw) {
+    loadData();
+  }
+})();
+</script>
+
+</body>
+</html>
